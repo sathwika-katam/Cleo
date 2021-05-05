@@ -1,0 +1,112 @@
+// "static void main" must be defined in a public class.
+public class Main {
+    public static void main(String[] args) {
+        Map<StudentID,Student> students = new HashMap<>();
+        Course  course1 = Course("Math10","Mahi");
+         Course  course1 = Course("Scien10","Sahi");
+         Course  course1 = Course("algos10","Sathwika");
+         Course  course1 = Course("javascript10","Jaya");
+        Students  student1 = new Student("kratnhi","j10");
+         Students  student2 = new Student("kr","k10");
+        student1.addCourse("Math10",10.0,"sem1");
+        student2.addCourse("Scien10",11.0,"sem1");
+        students.put(student1.studentID,student1);
+        students.put(student2.studentID,student2);
+        School school = new School();
+      System.out.println(school.getTeacher("Scien10"));
+       System.out.println(school.getGrade(students.get(j10), "sem1"));
+    }
+    
+    
+}
+
+ class School{
+     Courses course ;
+     Students student;
+     year year;
+     Map<String,String> teachCourse ;
+     Map<String,Double> courseGrades;
+      Map<String,String> courseSem;
+     Map<String,Integer> courseYear;
+     
+     School(){
+         course = new Courses();
+        teachCourse = course.Teacherscourses;
+         semYear = student.;
+     }
+     
+   public String  getTeacher(String CourseID){
+       if(teachCourse.containsKey(CourseID)){
+           return teachCourse.get(CourseID);
+       }
+        new throw IllegalArgumentException("No such course"); 
+   }
+     public double getGrade(Student student, String courseID ){
+         courseGrades = student.courseGrades;
+          if(courseGrades.containsKey(CourseID)){
+           return courseGrades.get(CourseID);
+       }
+        new throw IllegalArgumentException("No such course"); 
+ 
+     }
+     public Double getAverage(Student student,int year, int semester ){
+             
+         
+         
+     }
+    
+    
+    
+    
+}
+
+
+
+class Courses{
+    String courseID;
+    String teacherName;
+    Map<String,String> Teacherscourses = new HashMap<>();
+    Courses(){
+        
+    }
+    Courses(String courseID, String teacher){
+        Teacherscourses.put(courseID,teacher);    
+    }
+}
+
+
+class Students{
+    String name;
+    String studentID;
+    Year year;
+  Map<String,Double> courseGrades = new HashMap<>();
+  Map<Year,String> courseYear = new HashMap<>();
+    public Students(){
+        
+    }
+    public Students(String name,String studentID){
+        this.name = name;
+        this.studentID = studentID;
+    }
+    public void addCourse(String courseID,double grade,String sem,String year){
+         year = new Year(year,sem);
+        courseGrades.putIfAbsent(courseID,grade);
+        courseYEar.put(courseID,Year);
+    }
+
+    
+    
+}
+
+class year{
+    String year;
+    String sem;
+    public year(String year,String sem){
+    this.year = year;
+        this.sem=sem;
+        
+    }
+   
+}
+
+

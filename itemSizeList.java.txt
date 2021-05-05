@@ -1,0 +1,35 @@
+public class Main {
+    public static void main(String[] args) {
+        Main m = new Main();
+        String s = "Example";
+        List subList2 = new ArrayList();
+        subList2.add("a");
+        subList2.add("b");
+        List subList = new ArrayList();
+        subList.add("1");
+        subList.add("2");
+        subList.add("3");
+        subList.add(subList2);
+        List list = new ArrayList();
+        list.add("a String");
+        list.add(subList);        
+       m. itemizeList(s,list);
+    }
+    
+    public  void itemizeList(String input, List l){
+        int size = l.size();
+        for(int i=0;i<size;i++){
+            if(l.get(i) instanceof String){
+                System.out.println(input+" "+i+" "+l.get(i));
+            }
+            else if(l.get(i) instanceof List){
+                itemizeList(input+" "+ i, (List)l.get(i));
+                
+            }
+            
+        }
+    }
+    
+    
+    
+}
